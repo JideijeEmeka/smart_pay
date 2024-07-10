@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smartpay/controller/auth_controller.dart';
 import 'package:smartpay/helpers/utility.dart';
 import 'package:smartpay/model/account.dart';
+import 'package:smartpay/model/secret.dart';
 import 'package:smartpay/repository/auth_repository.dart';
 import 'package:smartpay/widgets/button_widget.dart';
 
@@ -21,7 +22,6 @@ class DashboardViewState extends StateMVC<DashboardView> {
   }
 
   late AuthController con;
-  AuthRepository authRepository = AuthRepository();
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class DashboardViewState extends StateMVC<DashboardView> {
               const Text('Hello, Welcome to SmartPay',
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 20,
+                  fontSize: 25,
                 ),
               ),
               const Padding(
@@ -50,13 +50,23 @@ class DashboardViewState extends StateMVC<DashboardView> {
                 child: Text('Below is your Secret Code',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                    fontSize: 25,
                   ),
                 ),
               ),
               context.watch<Account>().isLoading ?
                   Utility.loader() :
-              Text('Code: ${con.code}'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Text('${context.watch<Secret>().code!.secret}',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    fontStyle: FontStyle.italic
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 40, right: 40, top: 50),
                 child: buttonWidget(onTap: () {

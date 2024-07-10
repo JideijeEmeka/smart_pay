@@ -6,6 +6,7 @@ import 'package:smartpay/helpers/constants.dart';
 import 'package:smartpay/model/account.dart';
 import 'dart:io' show Platform;
 import 'package:smartpay/model/email_token.dart';
+import 'package:smartpay/model/secret.dart';
 
 class AuthRepository {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
@@ -98,13 +99,14 @@ class AuthRepository {
     return Account.fromJson(json.decode(response.body));
   }
 
-  Future getSecretCode(String code) async {
+  Future<Secret> getSecretCode(String token) async {
     var response = await http.get(Uri.parse("$kHostUrl/dashboard"),
         headers: {
-          "Token": code,
+          'Authorization': 'Bearer $token',
         }
     );
     debugPrint(response.body);
+    return Secret.fromJson(json.decode(response.body));
   }
 
   Future logout() async {

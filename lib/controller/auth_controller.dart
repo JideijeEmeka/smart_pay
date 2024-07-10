@@ -12,6 +12,7 @@ import 'package:smartpay/helpers/string_extension.dart';
 import 'package:smartpay/helpers/toast.dart';
 import 'package:smartpay/helpers/utility.dart';
 import 'package:smartpay/model/account.dart';
+import 'package:smartpay/model/secret.dart';
 import 'package:smartpay/repository/auth_repository.dart';
 import 'package:smartpay/views/congratulations_view.dart';
 import 'package:smartpay/views/create_pin_view.dart';
@@ -208,9 +209,7 @@ class AuthController extends ControllerMVC {
   void getSecretCode(BuildContext context, String code) {
     context.read<Account>().setLoader(true);
     authRepository.getSecretCode(code).then((res) {
-      setState(() {
-        code = res;
-      });
+      context.read<Secret>().update(res.code!);
     }).whenComplete(() {
       context.read<Account>().setLoader(false);
     });

@@ -2,6 +2,7 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smartpay/model/account.dart';
+import 'package:smartpay/model/secret.dart';
 import 'package:smartpay/views/splash.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<Account>(create: (_) => Account()),
+        ChangeNotifierProvider<Secret>(create: (_) => Secret()),
       ],
       child: MaterialApp(
         title: 'Smart pay',
