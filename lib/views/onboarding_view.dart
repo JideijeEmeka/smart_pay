@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:smartpay/helpers/constants.dart';
 import 'package:smartpay/widgets/onboarding_view1_widget.dart';
 import 'package:smartpay/widgets/onboarding_view2_widget.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});

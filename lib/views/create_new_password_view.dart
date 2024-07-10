@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:smartpay/helpers/constants.dart';
-import 'package:smartpay/views/password_recovery_view.dart';
 import 'package:smartpay/views/sign_up_view.dart';
 import 'package:smartpay/widgets/back_button_widget.dart';
 import 'package:smartpay/widgets/button_widget.dart';

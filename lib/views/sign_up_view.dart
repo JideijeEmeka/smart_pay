@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:smartpay/controller/auth_controller.dart';
 import 'package:smartpay/helpers/constants.dart';
 import 'package:smartpay/helpers/validation.dart';
-import 'package:smartpay/repository/auth_repository.dart';
-import 'package:smartpay/views/verify_otp_view.dart';
 import 'package:smartpay/widgets/back_button_widget.dart';
 import 'package:smartpay/widgets/button_widget.dart';
 import 'package:smartpay/widgets/text_form_field_widget.dart';

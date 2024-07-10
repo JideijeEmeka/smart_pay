@@ -3,7 +3,6 @@ import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:smartpay/controller/auth_controller.dart';
 import 'package:smartpay/helpers/constants.dart';
-import 'package:smartpay/widgets/back_button_widget.dart';
 import 'package:smartpay/widgets/button_widget.dart';
 
 class EnterPinView extends StatefulWidget {
