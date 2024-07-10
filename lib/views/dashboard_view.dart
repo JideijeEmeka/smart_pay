@@ -5,7 +5,6 @@ import 'package:smartpay/controller/auth_controller.dart';
 import 'package:smartpay/helpers/utility.dart';
 import 'package:smartpay/model/account.dart';
 import 'package:smartpay/model/secret.dart';
-import 'package:smartpay/repository/auth_repository.dart';
 import 'package:smartpay/widgets/button_widget.dart';
 
 class DashboardView extends StatefulWidget {
